@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get a readable transcript from a YouTube video.">
+  <title>YouTube Transcript Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="logo" aria-hidden="true">YT</div>
+      <p class="eyebrow">FREE TRANSCRIPT EXTRACTOR</p>
+      <h1>YouTube to Transcript</h1>
+      <p class="subtitle">Paste a video link and turn its captions into readable text.</p>
+    </header>
+
+    <section class="panel">
+      <form id="transcriptForm">
+        <label for="youtubeUrl">YouTube video link</label>
+        <div class="input-row">
+          <input
+            id="youtubeUrl"
+            type="url"
+            placeholder="https://www.youtube.com/watch?v=..."
+            autocomplete="url"
+            required
+          >
+          <button id="submitButton" type="submit">Get Transcript</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="resultSection" class="result-section" hidden>
+        <div class="result-heading">
+          <div>
+            <h2>Your transcript</h2>
+            <p id="languageInfo" class="language-info"></p>
+          </div>
+          <button id="copyButton" class="copy-button" type="button">Copy text</button>
+        </div>
+        <textarea id="transcriptOutput" readonly aria-label="Video transcript"></textarea>
+        <p id="wordCount" class="word-count"></p>
+      </section>
+    </section>
+
+    <footer>
+      <p>Simple, free-to-start tool. Transcript availability depends on the video.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
